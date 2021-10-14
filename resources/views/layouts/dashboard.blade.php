@@ -422,7 +422,7 @@
                 <div class="text-sm">
                     &copy;
                     <a class="text-blue-400 underline" href="/""
-                        rel="noopener noreferrer">Innovations</a>
+                        rel="noopener noreferrer">Amber Innovations</a>
                 </div>
                 <div>
                     <!-- Github svg -->
