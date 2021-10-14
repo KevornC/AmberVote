@@ -21,7 +21,7 @@ class ElectionSeeder extends Seeder
                 'start_date' => '2021-05-05',
                 'end_date' => '2021-08-05',
                 'desc' => 'Vote for a new President',
-                'status' => 'Active',
+                'status' => 'active',
             ],
             [
                 'user_id' => 2,
@@ -29,7 +29,7 @@ class ElectionSeeder extends Seeder
                 'start_date' => '2021-05-05',
                 'end_date' => '2021-08-05',
                 'desc' => 'Vote for a new Ceo',
-                'status' => 'Active',
+                'status' => 'active',
             ],
             [
                 'user_id' => 2,
@@ -37,7 +37,7 @@ class ElectionSeeder extends Seeder
                 'start_date' => '2021-05-05',
                 'end_date' => '2021-08-05',
                 'desc' => 'Vote for a new Governor',
-                'status' => 'Active',
+                'status' => 'active',
             ],
             [
                 'user_id' => 4,
@@ -45,7 +45,7 @@ class ElectionSeeder extends Seeder
                 'start_date' => '2021-05-05',
                 'end_date' => '2021-08-05',
                 'desc' => 'Vote for a new Pastor',
-                'status' => 'Inactive',
+                'status' => 'inactive',
             ],
             [
                 'user_id' => 5,
@@ -53,7 +53,7 @@ class ElectionSeeder extends Seeder
                 'start_date' => '2021-05-05',
                 'end_date' => '2021-08-05',
                 'desc' => 'Vote for a new Principal',
-                'status' => 'Active',
+                'status' => 'active',
             ],
             [
                 'user_id' => 1,
@@ -61,7 +61,7 @@ class ElectionSeeder extends Seeder
                 'start_date' => '2021-05-05',
                 'end_date' => '2021-08-05',
                 'desc' => 'Vote for a new Manager',
-                'status' => 'Active',
+                'status' => 'active',
             ]
         ];
 

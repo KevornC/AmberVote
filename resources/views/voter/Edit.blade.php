@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="w-1 w-full p-10 text-4xl text-center text-gray-600"> Add Voter</h1>
+    <h1 class="w-full p-10 text-4xl text-center text-gray-600"> Add Voter</h1>
     @if (Session()->has('Success'))
         <div class="p-10 text-2xl text-center text-gray-200 bg-blue-400">
             <p>{{ Session('Success') }}</p>

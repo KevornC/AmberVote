@@ -22,6 +22,7 @@ class CreateElectionsTable extends Migration
             $table->string('desc');
             $table->string('status')->default('active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

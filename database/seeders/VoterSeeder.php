@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Voter;
 
-class Voters extends Seeder
+class VoterSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +16,7 @@ class Voters extends Seeder
     {
         $Voter1 = [
             [
+                'election_id' => 1,
                 'voter_nm' => 'Kevorn Callum',
                 'email' => 'kevorn.callum16@gmail.com',
                 'valid_id' => '123-987-456',
@@ -27,6 +28,7 @@ class Voters extends Seeder
 
         $Voter2 = [
             [
+                'election_id' => 1,
                 'voter_nm' => 'Shaneika Lewis',
                 'email' => 'amberstudentneika@gmail.com',
                 'valid_id' => '123-977-456',
@@ -38,6 +40,7 @@ class Voters extends Seeder
 
         $Voter3 = [
             [
+                'election_id' => 1,
                 'voter_nm' => 'Richard Wilson',
                 'email' => 'Richard.Wilson@gmail.com',
                 'valid_id' => '123-987-416',
@@ -49,6 +52,7 @@ class Voters extends Seeder
 
         $Voter4 = [
             [
+                'election_id' => 2,
                 'voter_nm' => 'Latoya Jackson',
                 'email' => 'jacksonlatoya04@gmail.com',
                 'valid_id' => '113-987-456',
@@ -60,6 +64,7 @@ class Voters extends Seeder
 
         $Voter5 = [
             [
+                'election_id' => 2,
                 'voter_nm' => 'Patrick Virgo',
                 'email' => 'Patrick.Virgo@gmail.com',
                 'valid_id' => '123-987-856',

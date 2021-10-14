@@ -17,7 +17,7 @@ use App\Http\Controllers\VoterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage.home');
 });
 Auth::routes();
 
@@ -27,3 +27,6 @@ require __DIR__ . './kevorn.php';
 require __DIR__ . './latoya.php';
 require __DIR__ . './lewis.php';
 require __DIR__ . './richard.php';
+// Auth::routes();
+
+// Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');

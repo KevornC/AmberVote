@@ -18,10 +18,11 @@ class CreateBallotQuestionsTable extends Migration
             $table->bigInteger('ballot_id')->unsigned();
             $table->foreign('ballot_id')->references('id')->on('ballots');
             $table->longText('question');
-            $table->integer('max_res');
-            $table->integer('min_res');
+            $table->integer('max_res')->default(1);
+            $table->integer('min_res')->default(1);
             $table->string('desc');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
