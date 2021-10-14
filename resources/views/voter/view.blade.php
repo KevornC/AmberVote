@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div
         class="w-full inline-block px-8 pt-3 overflow-hidden align-middle bg-white rounded-bl-lg
         rounded-br-lg shadow shadow-dashboard">
@@ -28,12 +27,6 @@
                     <th
                         class="px-6 py-3 text-sm leading-4 tracking-wider text-left text-blue-500 border-b-2 border-gray-300">
                         Phone Number</th>
-                    <th
-                        class="px-6 py-3 text-sm leading-4 tracking-wider text-left text-blue-500 border-b-2 border-gray-300">
-                        Unqiue ID</th>
-                    <th
-                        class="px-6 py-3 text-sm leading-4 tracking-wider text-left text-blue-500 border-b-2 border-gray-300">
-                        Unique Key</th>
                     <th class="px-6 py-3 border-b-2 border-gray-300">Action</th>
                 </tr>
             </thead>
@@ -54,18 +47,6 @@
                             {{ $voter->valid_id }}</td>
                         <td class="px-6 py-4 text-sm leading-5 text-blue-900 whitespace-no-wrap border-b border-gray-500">
                             {{ $voter->phone_num }}</td>
-                        <td class="px-6 py-4 text-sm leading-5 text-blue-900 whitespace-no-wrap border-b border-gray-500">
-                            <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
-                                <span aria-hidden class="absolute inset-0 bg-green-200 rounded-full opacity-50"></span>
-                                <span class="relative text-xs">{{ $voter->unique_id }}</span>
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 text-sm leading-5 text-blue-900 whitespace-no-wrap border-b border-gray-500">
-                            <span class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900">
-                                <span aria-hidden class="absolute inset-0 bg-green-200 rounded-full opacity-50"></span>
-                                <span class="relative text-xs">{{ $voter->unique_key }}</span>
-                            </span>
-                        </td>
                         <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap border-b border-gray-500">
                             <button
                                 class="px-5 py-2 text-blue-500 transition duration-300 border border-blue-500 rounded hover:bg-blue-700 hover:text-white focus:outline-none"><a

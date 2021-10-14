@@ -20,6 +20,7 @@ class CreateBallotsTable extends Migration
             $table->string('ballot_type');
             $table->longText('desc');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\VoterController;
 
 //Adding Voters Routes
 
-Route::get('/dashboard/Create/Election/Voter', [VoterController::class, 'create'])->name('voter.create');
+Route::get('/dashboard/Election/Voter/{id}', [VoterController::class, 'create'])->name('voter.create');
 
 Route::post('/Add/Election/Voter', [VoterController::class, 'addvoter'])->name('AddVoterIndex');
 

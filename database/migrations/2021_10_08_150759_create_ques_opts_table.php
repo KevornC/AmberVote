@@ -19,7 +19,9 @@ class CreateQuesOptsTable extends Migration
             $table->longText('option');
             $table->string('photo')->nullable();
             $table->longText('opts_desc');
+            $table->bigInteger('total_vote')->unsigned()->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Election;
 use App\Models\User;
 use App\Models\Ballot;
+use App\Models\QuesOpt;
 use App\Models\QuestionAnswer;
 use App\Models\BallotQuestion;
 use Illuminate\Http\Request;
@@ -31,16 +32,16 @@ class QuestionAnswerController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
-        $ballot_count= BallotQuestion::where('ballot_id', $request->ballot_id)->count();
-    //  dd($ballot_count);
-      for ($i=1;$i<=$ballot_count; $i++) {
-        QuestionAnswer::create([
-            'voter_id'=>auth()->user()->id,
-            'ballot_question_id'=>$request->ballot_question_id.$i,
-            'answer'=>$request->answer.$i,
-        ]);
-    }
+    
+        foreach($request->answers as $key => $value) 
+        {
+            $option = quesOpt::where('ballot_question_id', $key)
+                ->where('id', $value)->get();  
+            $option[0]->total_vote++;
+            $option[0]->save();
+        }
+
+
     return redirect()->back();
 
     }

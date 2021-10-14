@@ -13,7 +13,8 @@ class QuesOpt extends Model
         'ballot_question_id',
         'option',
         'photo',
-        'opts_desc'
+        'opts_desc',
+        'total_vote'
     ];
 
     public function ballotQuestion()

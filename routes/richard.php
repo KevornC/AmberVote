@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ElectionController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TwilioController;
+use App\Http\Controllers\VoterController;
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'dashboardHome'])->name('dashboard.home');
@@ -19,6 +20,9 @@ Route::post('dashboard/Store/Election', [\App\Http\Controllers\ElectionControlle
 Route::get('dashboard/Election', [\App\Http\Controllers\ElectionController::class, 'ElectionIndex'])->name('Election.Index');
 Route::get('dashboard/Add/Election', [\App\Http\Controllers\ElectionController::class, 'AddElection'])->name('AddElection');
 Route::post('dashboard/Store/Election', [\App\Http\Controllers\ElectionController::class, 'ElectionStore'])->name('Election.Store');
+
+Route::get('dashboard/import/voters/form/{id}', [VoterController::class, 'importVotersForm'])->name('import.voters.form');
+Route::post('dashboard/import/voters', [VoterController::class, 'importVoters'])->name('import.voters');
 
 
 Route::get('/dashboard/election/show/{id}', [ElectionController::class, 'show'])->name('election.show');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ballot;
 use App\Models\Election;
 use Illuminate\Http\Request;
 use Auth;
@@ -55,7 +56,8 @@ class ElectionController extends Controller
     public function show($id)
     {
         $election = Election::find($id);
-        return view('election.show', compact('election'));
+        $ballot = Ballot::where('election_id', $id)->get()[0];
+        return view('election.show', compact('election', 'ballot'));
     }
 
     public function edit($id)

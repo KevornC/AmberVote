@@ -24,13 +24,15 @@
 
                   <h4 class="mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font text-center "> {{ $ballot['question'] }}</h4>
 
-                  <input type="hidden" name="ballot_question_id{{ $ballot['id'] }}" value="{{ $ballot['id'] }}">
+                  {{-- <input type="hidden" name="ballot_question_id{{ $ballot['id'] }}" value="{{ $ballot['id'] }}"> --}}
 
                     <div  id="group{{ $ballot['id'] }}">
 
                   @foreach ($ballot['ques_opt'] as $options)
                   <label for="answer">{{ $options['photo'] }}</label>
-                  <input type="checkbox" name="answer{{ $options['id'] }}" class="mb-3 text-base leading-relaxed text-blueGray-500 single-checkbox" value="{{ $options['option']}}">{{ $options['option']}} </input>
+                  
+                  <input type="checkbox" name="answers[{{ $ballot['id'] }}]" class="mb-3 text-base leading-relaxed text-blueGray-500 single-checkbox" value="{{ $options['id']}}">{{ $options['option']}} </input>
+                  {{-- <input type="checkbox" name="{{ $options['id'] }}" class="mb-3 text-base leading-relaxed text-blueGray-500 single-checkbox" value="{{ $options['option']}}">{{ $options['option']}} </input> --}}
                   
                   <br>
                   

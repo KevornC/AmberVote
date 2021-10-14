@@ -2,17 +2,24 @@
 
 @section('content')
     <div>
-        <h1 class="w-1 w-full p-10 text-4xl text-center text-gray-600"> Add Voter</h1>
+        <h1 class="w-full p-10 text-4xl text-center text-gray-600"> Add Voter</h1>
         @if (Session()->has('Success'))
             <div class="p-10 text-2xl text-center text-gray-200 bg-blue-400">
                 <p>{{ Session('Success') }}</p>
             </div>
         @endif
+        <div>
+            <a class="p-2 px-5 bg-blue-600 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300 hover:bg-blue-400 hover:text-gray-100"
+                href="{{ route('import.voters.form', $election_id) }}">Import Voters</a>
+        </div>
         <form action="{{ Route('AddVoterIndex') }}" method="post">
             @csrf
             <div class="p-6 mt-10 bg-white rounded-lg shadow">
                 <div class="grid gap-6 lg:grid-cols-2">
 
+                    <div class="hidden">
+                        <input type="hidden" value="{{ $election_id }}" name="election_id">
+                    </div>
                     <div
                         class="relative p-1 transition-all duration-500 border rounded focus-within:border-blue-500 focus-within:text-blue-500">
                         <div class="absolute px-1 -mt-4 text-xs tracking-wider uppercase">
@@ -89,42 +96,6 @@
                             </div>
                         @enderror
                     </div>
-
-                    {{-- <div
-                class="relative p-1 transition-all duration-500 border rounded focus-within:border-blue-500 focus-within:text-blue-500">
-                <div class="absolute px-1 -mt-4 text-xs tracking-wider uppercase">
-                    <p>
-                        <label for="unique_id" class="px-1 text-gray-600 bg-white">Unique ID *</label>
-                    </p>
-                </div>
-                <p>
-                    <input id="unique_id" autocomplete="false" tabindex="0" type="text" placeholder="TO101"
-                        name="unique_id" class="block w-full h-full px-1 py-1 outline-none">
-                </p>
-                @error('unique_id')
-                    <div class="mt-2 text-sm text-red-700">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div> --}}
-                    {{-- <div
-                class="relative p-1 transition-all duration-500 border rounded focus-within:border-blue-500 focus-within:text-blue-500">
-                <div class="absolute px-1 -mt-4 text-xs tracking-wider uppercase">
-                    <p>
-                        <label for="unique_key" class="px-1 text-gray-600 bg-white">Unique Key *</label>
-                    </p>
-                </div>
-                <p>
-                    <input id="unique_key" autocomplete="false" tabindex="0" type="text" placeholder="191"
-                        name="unique_key" class="block w-full h-full px-1 py-1 text-gray-900 outline-none">
-                </p>
-                @error('unique_key')
-                    <div class="mt-2 text-sm text-red-700">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div> --}}
-
                 </div>
 
                 <div class="flex justify-center pt-3 mt-6 border-t">
@@ -132,6 +103,10 @@
                         class="px-3 py-1 text-gray-100 transition-all duration-300 bg-blue-500 rounded hover:shadow-inner hover:bg-blue-700">
                         Save
                     </button>
+                    <a href="{{ url()->previous() }}" type="submit"
+                        class="px-3 py-1 text-gray-100 transition-all duration-300 bg-red-500 rounded hover:shadow-inner hover:bg-red-700">
+                        Cancel
+                    </a>
                 </div>
             </div>
         </form>

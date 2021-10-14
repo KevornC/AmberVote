@@ -22,6 +22,7 @@ class CreateBallotQuestionsTable extends Migration
             $table->integer('min_res');
             $table->string('desc');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
