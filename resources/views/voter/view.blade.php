@@ -2,9 +2,14 @@
 
 @section('content')
     <div
-        class="w-full inline-block px-8 pt-3 overflow-hidden align-middle bg-white rounded-bl-lg
-        rounded-br-lg shadow shadow-dashboard">
-        <h1 class=" p-6 text-3xl text-center text-gray-100 bg-blue-400">Voters Listing</h1>
+        class="inline-block w-full px-8 pt-3 overflow-hidden align-middle bg-white rounded-bl-lg rounded-br-lg shadow shadow-dashboard">
+        
+        <div class="w-full my-4">
+            <a class="p-2 px-5 text-lg text-gray-100 bg-blue-600 border-blue-300 rounded-lg focus:border-4 hover:bg-blue-400 hover:text-gray-100"
+                href="{{ route('Election.Index') }}">
+                Election Listing</a>
+        </div>
+        <h1 class="p-6 text-3xl text-center text-gray-100 bg-blue-400 ">Voters Listing</h1>
         @if (Session()->has('Success'))
             <div class="p-10 text-2xl text-center text-gray-200 bg-red-400">
                 <p>{{ Session('Success') }}</p>
@@ -14,8 +19,7 @@
             <thead>
                 <tr>
                     <th
-                        class=" px-6 py-3 leading-4
-            tracking-wider text-left text-blue-500 border-b-2 border-gray-300">
+                        class="px-6 py-3 leading-4 tracking-wider text-left text-blue-500 border-b-2 border-gray-300 ">
                         Voter
                         Name</th>
                     <th
