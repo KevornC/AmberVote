@@ -8,6 +8,7 @@ use App\Models\Ballot;
 use App\Models\QuesOpt;
 use App\Models\QuestionAnswer;
 use App\Models\BallotQuestion;
+use App\Models\Voter;
 use Illuminate\Http\Request;
 
 class QuestionAnswerController extends Controller
@@ -32,13 +33,16 @@ class QuestionAnswerController extends Controller
 
     public function store(Request $request)
     {
-
         foreach ($request->answers as $key => $value) {
             $option = quesOpt::where('ballot_question_id', $key)
                 ->where('id', $value)->get();
             $option[0]->total_vote++;
             $option[0]->save();
         }
+        Voter::find(session('voter_id'))->update([
+            'hasVoted' => 1
+        ]);
+        session()->flush();
 
         return redirect('/')->with('success', 'Thank you for voting!');
     }

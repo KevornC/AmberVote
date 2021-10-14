@@ -45,7 +45,8 @@ class VoterController extends Controller
             'valid_id' => $req->valid_id,
             'unique_id' => $this->unique_id,
             'unique_key' => $this->unique_key,
-            'phone_num' => $req->phone_num
+            'phone_num' => $req->phone_num,
+            'v_code' => rand(100000, 999999),
         ]);
 
         event(new StartElection($voter));
@@ -216,13 +217,21 @@ class VoterController extends Controller
         $request->validate([
             'unique_id' => 'required',
             'unique_key' => 'required',
+            'code' => 'required',
         ]);
 
         $credentials = $request->only('unique_id', 'unique_key');
         $voter = Voter::where('unique_id', $request->unique_id)
-            ->where('unique_key', $request->unique_key)->first();
+            ->where('unique_key', $request->unique_key)
+            ->where('v_code', $request->code)
+            ->first();
+
+        if ($voter?->hasVoted) {
+            return redirect()->back()->with('error', 'You have already submitted your votes. Thank you for participating in this election.');
+        }
+
         if ($voter) {
-            // session(['election_id' => $voter->election_id]);
+            session(['voter_id' => $voter->id]);
 
             return redirect()->route('election.answer', $voter->election_id)
                 ->with('success', 'Happy Voting');

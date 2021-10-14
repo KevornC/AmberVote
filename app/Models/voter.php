@@ -16,7 +16,9 @@ class Voter extends Model
         'valid_id',
         'unique_id',
         'unique_key',
-        'phone_num'
+        'phone_num',
+        'v_code',
+        'hasVoted'
     ];
 
     public function questionVoter()

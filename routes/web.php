@@ -17,7 +17,7 @@ use App\Http\Controllers\VoterController;
 */
 
 Route::get('/', function () {
-    return view('homepage.home');
+    return view('homepage.homeCopy');
 });
 Auth::routes();
 
