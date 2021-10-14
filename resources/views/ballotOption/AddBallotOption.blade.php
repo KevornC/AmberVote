@@ -5,7 +5,7 @@
 @section('content')
 {{--    <h1 class="bg-gray-100 p-2 text-BLACK font-bold  text-center ">Ballot OPTION</h1>--}}
     {{--    <div class="w-full max-w-xs">--}}
-    <div class="bg-gray-200  w-full py-8 px-2 sm:py-10 sm:px-6  lg:px-2">
+    <div class="bg-white   w-full py-8 px-2 sm:py-10 sm:px-6  lg:px-2">
         <div class="grid grid-cols-3 sm:grid-cols-3  lg:grid-cols-3 xl:grid-cols-3 ">
             <div>
                 <form class="bg-white w-11/12 shadow-md rounded px-8 pt-6 pb-8 mb-4" ACTION="{{route('AddBO')}}" method="post" enctype="multipart/form-data">
@@ -49,6 +49,7 @@
 {{--                        <button class="p-2 pl-5 pr-5 bg-blue-600 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300 hover:bg-blue-400 hover:text-gray-100" type="Submit"> Finish </button>--}}
 {{--                    </form>--}}
                     <a href="{{route('BQ',$ballot_id)}}"><button class="p-2 pl-5 pr-5 bg-blue-600 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300 hover:bg-blue-400 hover:text-gray-100" >Return to add more question </button></a>
+                    <a href="{{route('voter.create',$election_id)}}"><button class="p-2 pl-5 pr-5 bg-blue-600 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300 hover:bg-blue-400 hover:text-gray-100" >Add Voter </button></a>
 
                 </div>
 
