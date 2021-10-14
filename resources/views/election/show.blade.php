@@ -68,8 +68,9 @@
             <div class="flex my-12 m-auto">
                 <div class="flex mr-12">
                     <div class="bg-white shadow-md rounded px-8 pt-6 pb-8">
+                        <h2 class="text-2xl text-gray-700 text-center">Election Details</h2>
                         <ul>
-                            <li class="text-lg font-bold my-4">{{ $election->election_nm }}</li>
+                            <li class="text-lg font-bold text-gray-800 my-4">{{ $election->election_nm }}</li>
                             <li class="my-2">
                                 <span class="font-semibold">Start Date:
                                 </span>{{ $election->start_date }}
@@ -117,37 +118,35 @@
                 @empty
                     <span>No Ballot Created</span>
                 @endforelse
-                {{-- <div class="m-auto bg-white shadow-md rounded px-8 pt-6 pb-8 m-4">
-            <ul>
-                <li class="text-lg font-bold my-4">{{ $election->election_nm }}</li>
-                <li class="my-2">
-                    <span class="font-semibold">Start Date:
-                    </span>{{ $election->start_date }}
-                </li>
-                <li class="my-2">
-                    <span class="font-semibold">End Date:
-                    </span>{{ $election->end_date }}
-                </li>
-                <li class="my-2">
-                    <span class="font-semibold">Description:
-                    </span>{{ $election->desc }}
-                </li>
-                <li class="my-2">
-                    <span class="font-semibold">Election Status:
-                    </span>{{ $election->status }}
-                </li>
-            </ul>
-
-        </div> --}}
-                <div>
-                    <a class="
-                text-lg font-semibold text-red-500" href="{{ url()->previous() }}"
-                        type="submit">
-                        {{ '<<< Back' }}
-                    </a>
-                </div>
+                {{-- < class="m-auto bg-white shadow-md rounded px-8 pt-6 pb-8 m-4">
+                <ul>
+                    <li class="text-lg font-bold my-4">{{ $election->election_nm }}</li>
+                    <li class="my-2">
+                        <span class="font-semibold">Start Date:
+                        </span>{{ $election->start_date }}
+                    </li>
+                    <li class="my-2">
+                        <span class="font-semibold">End Date:
+                        </span>{{ $election->end_date }}
+                    </li>
+                    <li class="my-2">
+                        <span class="font-semibold">Description:
+                        </span>{{ $election->desc }}
+                    </li>
+                    <li class="my-2">
+                        <span class="font-semibold">Election Status:
+                        </span>{{ $election->status }}
+                    </li>
+                </ul> --}}
             </div>
 
+        </div>
 
-
-        @endsection
+        <div>
+            <a class="
+                text-lg font-semibold text-red-500" href="{{ url()->previous() }}" type="submit">
+                {{ '<<< Back' }}
+            </a>
+        </div>
+    </div>
+@endsection

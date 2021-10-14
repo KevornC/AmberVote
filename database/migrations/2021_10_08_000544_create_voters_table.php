@@ -22,6 +22,7 @@ class CreateVotersTable extends Migration
             $table->string('unique_id')->unique();
             $table->string('unique_key')->unique();
             $table->string('phone_num');
+            $table->string('v_code');
             $table->boolean('hasVoted')->default(0);
             $table->timestamps();
             $table->softDeletes();

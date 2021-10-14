@@ -2,22 +2,25 @@
 
 use App\Http\Controllers\VoterController;
 
-//Voter Section
+Route::middleware('auth')->group(function () {
 
-//Adding Voters Routes
+    //Voter Section
 
-Route::get('/dashboard/Election/Voter/{id}', [VoterController::class, 'create'])->name('voter.create');
+    //Adding Voters Routes
 
-Route::post('/Add/Election/Voter', [VoterController::class, 'addvoter'])->name('AddVoterIndex');
+    Route::get('/dashboard/Election/Voter/{id}', [VoterController::class, 'create'])->name('voter.create');
 
-//View Voters Info Routes
-Route::get('/dashboard/View/Election/Voters', [VoterController::class, 'view'])->name('ViewVoterIndex');
+    Route::post('/Add/Election/Voter', [VoterController::class, 'addvoter'])->name('AddVoterIndex');
 
-//Edit Voters Info Routes
-Route::get('/dashboard/Edit/Election/Voter{id}', [VoterController::class, 'edit'])->name('EditVoterIndex');
+    //View Voters Info Routes
+    Route::get('/dashboard/View/Election/Voters', [VoterController::class, 'view'])->name('ViewVoterIndex');
 
-Route::post('/dashboard/Edit/Election/Voter', [VoterController::class, 'update'])->name('EditVoterIndex');
+    //Edit Voters Info Routes
+    Route::get('/dashboard/Edit/Election/Voter{id}', [VoterController::class, 'edit'])->name('EditVoterIndex');
 
-//Delete Voter
+    Route::post('/dashboard/Edit/Election/Voter', [VoterController::class, 'update'])->name('EditVoterIndex');
 
-Route::get('/Delete/Election/Voter{id}', [VoterController::class, 'delete'])->name('DeleteVoterIndex');
+    //Delete Voter
+
+    Route::get('/Delete/Election/Voter{id}', [VoterController::class, 'delete'])->name('DeleteVoterIndex');
+});

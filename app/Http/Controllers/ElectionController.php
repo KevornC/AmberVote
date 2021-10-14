@@ -91,4 +91,9 @@ class ElectionController extends Controller
         Election::destroy($id);
         return redirect()->route('Election.Index');
     }
+
+    public function sendNotifications()
+    {
+        //
+    }
 }
