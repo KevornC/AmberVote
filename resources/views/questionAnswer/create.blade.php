@@ -52,7 +52,7 @@
         
 <script>
 $('input.single-checkbox').on('change', function(evt){
-    if($(this).siblings(':checked').length >= 1){
+    if($(this).siblings(':checked').length >= {{ $max_res }}){
         this.checked = false;
     }
 })
